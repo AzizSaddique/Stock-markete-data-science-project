@@ -36,3 +36,4 @@ data.insert(0, 'Date', data.index)
 data.reset_index(drop=True, inplace=True)
 st.write('Data from', start_date,'to',end_date)
 st.write(data)
+
