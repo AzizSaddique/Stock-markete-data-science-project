@@ -114,11 +114,31 @@ fig=go.Figure()
 # add actual data to the plot
 fig.add_trace(go.Scatter(x=data['Date'], y=data[column], mode='lines', name='Actual Data', line=dict(color='blue')))
 #  add predict the data to the plot
-
-
-
 fig.add_trace(go.Scatter(x=predictions['Date'], y=predictions['predicted_mean'], mode='lines', name='Predicted Data', line=dict(color='red')))
 # set the title and labels
-fig.update_layout(title='Actual vs Predicted', xaxis_title='Date', yaxis_title='Price', width=1400, height=600)
+fig.update_layout(title='Actual vs Predicted', xaxis_title='Date', yaxis_title='Price', width=1000, height=600)
 # Display the plot
 st.plotly_chart(fig)
+
+# Add button to show and hide the saparate plots
+show_plots = False
+if st.button('Show saparate plots'):
+    if not show_plots:
+        st.write(px.line(x=data['Date'], y=data[column], title='Actual', width=1200, height=400, labels={'x': 'Date', 'y': column}).update_traces(line_color='blue'))
+        st.write(px.line(x=predictions['Date'], y=predictions['predicted_mean'], title='Predicted', width=1200, height=400, labels={'x': 'Date', 'y': 'Predicted'}).update_traces(line_color='red'))
+        show_plots = True
+    else:
+        show_plots = False
+
+# Add hide plots button
+hide_plots = False
+if st.button('Hide saparate plots'):
+    if not hide_plots:
+        hide_plots = True
+    else:
+        hide_plots = False
+st.write('--------------------')
+
+st.write(" <p style='color:green; font-size:50px; fornt-weight:bold;'>Thank you for using the app</p> ",unsafe_allow_html=True)
+st.write(" <p style='color:blue; font-size:30px; fornt-weight:bold;'>Developed by: </p> ",unsafe_allow_html=True)
+st.write(" <p style='color:blue; font-size:30px; fornt-weight:bold;'>Muhammad Aziz Saddique </p> ",unsafe_allow_html=True)
