@@ -41,8 +41,8 @@
 # import random
 # print(random.randint(1, 10))
 
-# from math import sin,cos,tan,pi
-# print(sin(1))
+from math import sin,cos,tan,pi
+print(sin(1))
 
 # from mymodule import *
 
