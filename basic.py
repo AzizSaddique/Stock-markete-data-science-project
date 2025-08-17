@@ -41,9 +41,25 @@
 # import random
 # print(random.randint(1, 10))
 
-from math import sin,cos,tan,pi
-print(sin(1))
+# from math import sin,cos,tan,pi
+# print(sin(1))
 
 # from mymodule import *
 
+# import libraries
+%pip install seaborn --quiet
 
+import pandas as pd
+import numpy as np 
+import seaborn as sns
+import matplotlib.pyplot as plt
+# %pip install yfinance --quiet
+import yfinance as yf
+import datetime as dt
+from datetime import date, timedelta
+# %pip install plotly --quiet
+import plotly.graph_objects as go
+import plotly.express as px
+from statsmodels.tsa.stattools import adfuller
+from statsmodels.tsa.seasonal import seasonal_decompose
+from statsmodels.tsa.statespace.sarimax import SARIMAX
